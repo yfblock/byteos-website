@@ -20,6 +20,11 @@ jobs:
       uses: jetli/trunk-action@v0.4.0
       with:
         version: latest
+    - name: rust-toolchain
+      uses: actions-rs/toolchain@v1.0.6
+      with:
+        # Rust toolchain name.
+        target: wasm32-unknown-unknown
     - name: Build
       run: cd view && trunk build --release
     - name: Upload GitHub Pages artifact
