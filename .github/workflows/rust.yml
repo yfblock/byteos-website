@@ -23,6 +23,7 @@ jobs:
     - name: rust-toolchain
       uses: actions-rs/toolchain@v1.0.6
       with:
+        toolchain: stable
         # Rust toolchain name.
         target: wasm32-unknown-unknown
     - name: Build
