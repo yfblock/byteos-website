@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
+    basePath: '/byteos',
     // webpack: (config, { isServer }) => {
     //     config.experiments = {
     //         asyncWebAssembly: true,
