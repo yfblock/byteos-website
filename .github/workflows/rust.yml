@@ -26,12 +26,14 @@ jobs:
         toolchain: stable
         # Rust toolchain name.
         target: wasm32-unknown-unknown
+    - name: wasm-pack-action
+      uses: jetli/wasm-pack-action@v0.4.0
     - name: Build
-      run: cd view && trunk build --release
+      run: cd view/byteos && npm run build
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v3.0.0
       with:
         target_branch: gh-pages
-        build_dir: view/dist
+        build_dir: view/byteos/out
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
